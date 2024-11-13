@@ -1,0 +1,55 @@
+:root{
+    --color-principal: #d6ab72;
+    --color-secundario: #FFFFFF;
+    --color-alternativo: rgba(0, 0, 0, 0.24);
+    --color-fondo: #fdf3e1;
+    --fuente-titulos: 'Cantata One', sans-serif;
+    --fuente-parrafos: 'Roboto', sans-serif;
+}
+
+html{
+    font-family: var(--fuente-parrafos) !important;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--color-fondo) !important;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+.title{
+    font-family: var(--fuente-titulos), serif
+}
+
+button{
+    background-color: var(--color-principal) !important;
+    border: none !important;
+}
+
+button:hover{
+    background-color: #d19951 !important;
+}
+
+input:focus{
+    border-color: var(--color-principal) !important;
+    box-shadow: var(--color-principal) !important;
+}
+
+.register{
+    font-weight: bold;
+    color: var(--color-principal);
+}
+
+.register:hover{
+    color: #d19951;
+}

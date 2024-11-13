@@ -1,0 +1,229 @@
+:root{
+    --color-principal: #d6ab72;
+    --color-secundario: #FFFFFF;
+    --color-alternativo: rgba(0, 0, 0, 0.24);
+    --color-fondo: #fdf3e1;
+    --fuente-titulos: 'Cantata One', sans-serif;
+    --fuente-parrafos: 'Roboto', sans-serif;
+}
+
+html{
+    font-family: var(--fuente-parrafos), serif !important;
+}
+
+body{
+    background-color: var(--color-fondo) !important;
+}
+
+/* NAVBAR */
+.logo{
+    width: 42px;
+    height: 42px;
+}
+
+.navbar{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    transition: color .3s ease-in-out;
+}
+
+.navbar a:hover{
+    color: var(--color-principal);
+}
+
+.navbar-brand{
+    font-family: var(--fuente-titulos), serif;
+}
+
+nav .cursos{
+    display: none;
+}
+
+
+.menu{
+    color: #FFFFFF !important;
+}
+
+.dropdown-menu{
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.dropdown-menu .logout{
+    display: none;
+}
+.dropdown span{
+    font-size: 2.5rem;
+}
+
+.links{
+    border-bottom: 2px solid transparent;
+    transition: border-bottom .3s ease;
+}
+.links:hover{
+    border-bottom: 2px solid var(--color-principal);
+}
+
+.dropdown-menu .dropdown-menu-right{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dropdown-item{
+    border: 2px solid transparent !important;
+    transition: border-bottom .3s ease-in-out;
+}
+
+.dropdown-item:hover{
+    background-color: transparent !important;
+    border-bottom: 2px solid var(--color-principal) !important;
+}
+
+/* NAVBAR */
+
+.hero-image{
+    background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.3)), url('../img/2.jpeg') no-repeat top center;
+    background-size: cover;
+    height: 500px;
+    position: relative;
+}
+
+.hero-title {
+    font-family: var(--fuente-titulos), serif;
+}
+
+/* CAROUSEL */
+
+.container-principal-carousel{
+    height: 80vh;
+}
+
+.barber-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-box-shadow: 26px 70px 95px -126px rgba(0,0,0,0.75);
+    -moz-box-shadow: 26px 70px 95px -126px rgba(0,0,0,0.75);
+    box-shadow: 26px 70px 95px -126px rgba(0,0,0,0.75);
+}
+
+.barber-card img {
+    width: 60%;
+    height: 5%;
+}
+
+.barber-decoration{
+    margin-bottom: 5px;
+    width: 4rem !important;
+    height: 3px !important;
+    background-color: var(--color-principal);
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-body h5{
+    margin-bottom: 5px;
+}
+
+.barbero-container{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.barbero{
+    padding: 0 !important;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    max-width: 40% !important;
+}
+
+.seleccionado {
+    border: 3px solid var(--color-principal);
+    border-radius: 3px;
+  }
+
+.container {
+    max-width: 800px;
+}
+
+.next-btn{
+    background-color: var(--color-principal) !important;
+    border: none !important;
+}
+
+.next-btn:hover{
+    background-color: #d19951 !important;
+}
+
+.turno-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.turno-decoration{
+    margin-bottom: 5px;
+    width: 6rem !important;
+    height: 3px !important;
+    background-color: var(--color-principal);
+}
+
+.hora{
+    display: flex;
+    flex-direction: column;
+}
+
+.hora select{
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
+/* ENDCAROUSEL */
+/* FOOTER */
+
+.footer-info-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.footer-decoration{
+    background-color: var(--color-principal);
+    width: 5rem;
+    height: 3px;
+    margin-bottom: 1rem;
+}
+footer{
+    background-color: #202124
+}
+
+footer a:hover{
+    color: var(--color-principal) !important;
+    text-decoration: none !important;
+
+}
+
+.copyright{
+    background-color: rgba(0, 0, 0, 0.2)
+}
+
+@media (max-width: 600px) {
+
+
+}

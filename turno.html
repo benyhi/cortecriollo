@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logo-barberia.png" type="image/x-icon">
+    <link rel="stylesheet" href="static/turnos-style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cantata+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Corte Criollo - Turnos</title>
+</head>
+<header>
+    <div class="hero-image"></div>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <a class="navbar-brand" href="index.html"><img class="logo" src="img/logo-barberia.png" alt="logo-barberia-redireccion-incio">Corte Criollo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="menu material-symbols-outlined">menu</span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item ml-5">
+                    <a class="nav-link links" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item ml-5">
+                    <a class="nav-link links" href="nosotros.html">Nosotros</a>
+                </li>
+                <li class="nav-item ml-5">
+                    <a class="nav-link links" href="turno.html">Turnos</a>
+                </li>
+                <li class="nav-item ml-5">
+                    <a class="nav-link links cursos" id="cursos" href="cursos.html">Cursos</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="material-symbols-outlined">account_circle</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="login.html" id="login">Iniciar Sesión</a>
+                <a class="dropdown-item" href="register.html" id="register">Registrarse</a>
+                <a class="dropdown-item logout" id="logout" onclick="cerrarSesion()">Cerrar Sesion</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<body>
+    <!-- Carrusel de Pasos -->
+    <div id="stepsCarousel" class="carousel slide container my-5 container-principal-carousel" data-interval="false">
+        <div class="carousel-inner">
+            <!-- PASO 1 -->
+            <div class="carousel-item active">
+                <div class="text-center">
+                    <h2 class="hero-title">Elegi a tu Barbero</h2>
+                    <p>Paso 1 de 3</p>
+                </div>
+                <div class="row barbero-container">
+                    <!-- Barbero 1 -->
+                    <div class="col-md-6 mb-4 barbero" id="barbero1">
+                        <div class="card barber-card">
+                            <img src="img/barbero_1.png" class="card-img-top" alt="Juan" >
+                            <div class="card-body text-center">
+                                <h5 class="card-title hero-title">JUAN</h5>
+                                <span class="barber-decoration"></span>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus eget orci quis volutpat. Sed quam justo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Barbero 2 -->
+                    <div class="col-md-6 mb-4 barbero" id="barbero2">
+                        <div class="card barber-card">
+                            <img src="img/barbero_3.png" class="card-img-top" alt="Juan">
+                            <div class="card-body text-center">
+                                <h5 class="card-title hero-title">CARLOS</h5>
+                                <span class="barber-decoration"></span>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus eget orci quis volutpat. Sed quam justo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary float-right next-btn" onclick="$('#stepsCarousel').carousel('next')">Siguiente</button>
+            </div>
+
+            <!-- PASO 2 -->
+            <div class="carousel-item">
+                <div class="text-center">
+                    <h2 class="hero-title">Elegi el día y hora del turno</h2>
+                    <p>Paso 2 de 3</p>
+                </div>
+                <div class="row justify-content-center">
+                    <!-- Selección de día y hora -->
+                    <div class="col-md-8">
+                        <div class="card p-3">
+                            <div class="turno-container">
+                                <h5 class="card-title text-center">Seleccionar Turno</h5>
+                                <span class="turno-decoration"></span>
+                            </div>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="dia" class="form-label">Selecciona un día</label>
+                                    <input type="date" class="form-control" id="dia" required>
+                                </div>
+                                <div class="mb-3 hora">
+                                    <label for="hora" class="form-label">Selecciona un horario</label>
+                                    <select class="form-select" id="hora" required>
+                                        <option value="" disabled selected>Elige una opción...</option>
+                                        <option value="08:00">08:00 AM</option>
+                                        <option value="09:00">09:00 AM</option>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="11:00">11:00 AM</option>
+                                        <option value="12:00">12:00 PM</option>
+                                        <option value="13:00">01:00 PM</option>
+                                        <option value="14:00">02:00 PM</option>
+                                        <option value="15:00">03:00 PM</option>
+                                        <option value="16:00">04:00 PM</option>
+                                        <option value="17:00">05:00 PM</option>
+                                        <option value="18:00">06:00 PM</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary float-right mt-3 next-btn" onclick="$('#stepsCarousel').carousel('next')">Siguiente</button>
+            </div>
+
+            <!-- PASO 3 -->
+            <div class="carousel-item">
+                <div class="text-center">
+                    <h2 class="hero-title">Completa tus datos</h2>
+                    <p>Paso 3 de 3</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="firstName">Nombre</label>
+                                    <input type="text" class="form-control" id="firstName" placeholder="Ingresa tu nombre" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="lastName">Apellido</label>
+                                    <input type="text" class="form-control" id="lastName" placeholder="Ingresa tu apellido" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Ingresa tu email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Celular</label>
+                                <input type="tel" class="form-control" id="phone" placeholder="Ingresa tu número de celular" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary next-btn">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/turnos-scripts.js"></script>
+    <script src="static/index-scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+<footer class="text-center text-lg-start text-white mt-5">
+    <section class="p-1">
+        <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 footer-info-container">
+                    <h6 class="text-uppercase fw-bold">Barberia Corte Criollo</h6>
+                    <span class="footer-decoration"></span>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi rem harum magni enim quos voluptate debitis non hic culpa, iste ipsum possimus? Soluta eveniet eius ea alias possimus corrupti placeat?</p>
+                </div>
+
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 footer-info-container">
+                    <h6 class="text-uppercase fw-bold">Redes Sociales</h6>
+                    <span class="footer-decoration"></span>
+                    <p>
+                        <a href="#!" class="text-white">Facebook</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-white">Instagram</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-white">Twitter</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-white">Linkedin</a>
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 footer-info-container">
+                    <h6 class="text-uppercase fw-bold">Contacto</h6>
+                    <span class="footer-decoration"></span>
+                    <p><a href="https://goo.gl/maps/8ZpVFQujfmPyLD6p7" class="text-white me-4">
+                        <i class="fa fa-home mr-3"></i></a>San Martin 566, X5800 Río Cuarto, Córdoba</p>
+                    <p><i class="fa fa-envelope mr-3"></i> info@barberiacortecriollo.com</p>
+                    <p><i class="fa fa-phone mr-3"></i> +54 0358 4645265</p>
+                    <p><i class="fa fa-print mr-3"></i> +54 0358 5105538</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <div class="text-center p-3 copyright">
+        <p>© Derechos de autor 2024. Todos los derechos reservados a Barberia Corte Criollo</p>
+    </div>
+</footer>
+</html>
